@@ -1,0 +1,8 @@
+name = popup event
+description = popup event
+package = Event calendar
+core = 7.x
+version = "7.x"
+core = "7.x"
+project = recruiter
+datestamp = ""

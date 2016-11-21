@@ -1,0 +1,22 @@
+<?php
+// This function adds a '+' next to each datebox with a link to the event node creation page,
+// if the current user has permission to create events.
+// Replace 'mymodule' with the name of your module.
+// Replace 'event' with the name of your CCK content type.
+function mymodule_preprocess_calendar_datebox(&$vars) {
+    global $user;
+  if (user_access('create event content', $user)) {
+        $vars['add_event_link'] = l('+', 'node/add/event_calendar/' . $vars['date'], array('attributes' => array('title' => 'Add an event')));
+  }
+}
+// This function prepopulates the time field when the event is created.
+// Replace 'mymodule' with the name of your module.
+// Replace 'event' with the name of your CCK content type.
+// Replace 'time' with the name of your date field.
+function mymodule_form_alter(&$form, $form_state, $form_id) {
+ if ($form_id == 'event_calendar_node_form' && arg(3) != '') {
+       $form['field_time']['#default_value']['value'] = arg(3) . ' 12:00:00';
+     $form['field_time']['#default_value']['value2'] = arg(3) . ' 13:00:00';
+    }
+}
+?>
