@@ -1,0 +1,8 @@
+recruiter:
+- event calendar permission:
++ mentor:
+ System >> View the administration theme 
++ applicant:
+Group>>Bypass group access control 
+System >> View the administration theme
+custom: sites/all/themes/mytheme/templates/views-view-field--edit-node.tpl.php 
