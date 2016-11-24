@@ -30,7 +30,7 @@
 //var_dump($menu);
 global $user;
 
-  if (in_array('applicant', $user->roles)){
+  if (in_array('applicant', $user->roles) && count($user->roles) <= 2){
       //echo "applicant";
       unset($page['navigation']['menu_menu-recruiter-menu']);
       unset($page['navigation']['system_user-menu']);

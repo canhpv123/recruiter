@@ -6,3 +6,12 @@ recruiter:
 Group>>Bypass group access control 
 System >> View the administration theme
 custom: sites/all/themes/mytheme/templates/views-view-field--edit-node.tpl.php 
+
+- Profile Complete Percentages:
+  configuration >> people >> Profile Complete Percentages
+  block >> content >> Profile Complete Percentages
+  
+  
+- main navigation, edit calendar
+	sites/all/themes/mytheme/layouts/epiqo/epiqo.tpl.php
+	sites/all/themes/mytheme/templates/views-view-field--edit-node.tpl.php

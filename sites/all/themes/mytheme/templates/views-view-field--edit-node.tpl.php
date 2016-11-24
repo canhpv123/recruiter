@@ -23,7 +23,7 @@
  */
 //var_dump($output);
 global $user;
-if (in_array('applicant', $user->roles)){
+if (in_array('applicant', $user->roles) && count($user->roles) <= 2){
     $output = '';
 } 
 ?>
