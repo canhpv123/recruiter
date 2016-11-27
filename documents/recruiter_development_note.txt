@@ -1,0 +1,57 @@
+1. DIRECTORY OF ADDITIONAL MODULES:
+-----------------------------------
+using default configuration of drupal 7, additional modules (downloaded modules and custom modules) will be placed in sites/all/modules
+
+2. INSTALLED MODULES (downloaded modules):
+------------------------------------------
+- Event Calendar: install as normally then set permission for roles (and custom in template to make readonly event for applicant):
+	+ mentor:
+		System >> View the administration theme 
+	+ applicant:
+		Group>>Bypass group access control 
+		System >> View the administration theme
+		custom: sites/all/themes/mytheme/templates/views-view-field--edit-node.tpl.php
+		
+- Total Control (Total Control Administrative Dashboard)
+	Configuration » Administration >> Total Control Dashboard
+
+- Advanced Forum (Enables the look and feel of other popular forum software.)
+	Configuration » Content authoring >> Advanced Forum
+
+- Filedepot (files management)
+	+ install: install as normally then create two folders as below:
+		> sites/all/libraries/html_encoder
+		> sites/all/libraries/jquery.blockui
+		download content for these folders:
+		> http://www.strictly-software.com/scripts/downloads/encoder.js  - SAVE FILE as: html_encoder/html_encoder.js
+        > http://jquery.malsup.com/block/#download  - SAVE FILE as jquery.blockui/jquery.blockui.js
+	+ Configuration: 
+		Configuration » Media >> Filedepot Settings
+
+- Flag Follow:
+	Administration » Structure » Flags
+	
+- Profile2 (Supports configurable user profiles):
+	Administration » Structure >> Profile types
+	Administration » Configuration » Recruiter >> Resume
+	
+- Profile Complete Percentage:
+	Administration » Structure >> Blocks: configure region to display PCP
+	Administration » Configuration » People >> Profile Complete Percentages: configure for default profiles
+	Administration » Structure » Profile types >> Edit Resume: configure for Profile2
+	
+- Honeypot (Mitigates spam form submissions using the honeypot method)
+	Administration » Configuration » Content authoring >> Honeypot configuration
+
+- Organic Groups: haven't finish configuration
+
+OTHERS:
+------  
+- main navigation, edit calendar
+	>sites/all/themes/mytheme/layouts/epiqo/epiqo.tpl.php
+	>sites/all/themes/mytheme/templates/views-view-field--edit-node.tpl.php
+
+- redirect after login:
+	+ enable drupal core module "Trigger"
+	+ create an action:  'Administration' » 'Configuration' » Actions
+	+ Administration » Structure » Triggers >> User
